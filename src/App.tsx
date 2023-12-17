@@ -4,13 +4,17 @@ import { AppRouter } from "./AppRouter";
 
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
+import { CyclesContextProvider } from "./hooks/useCyclesContext";
+
 
 const App = () => {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
         <BrowserRouter>
-          <AppRouter />
+          <CyclesContextProvider>
+            <AppRouter />
+          </CyclesContextProvider>
         </BrowserRouter>
         <GlobalStyle />
       </ThemeProvider>
